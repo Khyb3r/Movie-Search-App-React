@@ -5,6 +5,7 @@ function MovieList(props) {
     const FavouriteComponent = props.favouriteComponent;
     const addToFavouriteList = props.handleFavouriteMovieClick;
 
+
     return(
         <div className="movie-list d-flex flex-row overflow-auto"> 
         {props.movies.map((movie, index) => (

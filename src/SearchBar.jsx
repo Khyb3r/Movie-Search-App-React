@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function SearchBar(props) {
-
-    console.log("Search Bar props:" , props);
-    
     return(
         <div className="col-md-4 col-sm-6">
       <input
@@ -18,7 +15,7 @@ function SearchBar(props) {
     );
 }
 
-SearchBar.PropTypes = {
+SearchBar.propTypes = {
     movieSearch: PropTypes.string.isRequired,
     setMovieSearch: PropTypes.func.isRequired,
 }

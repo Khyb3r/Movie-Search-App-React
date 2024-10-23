@@ -18,8 +18,12 @@ useEffect(() => {
 
 useEffect(() => {
   const existingFavouritesList = JSON.parse(localStorage.getItem("react-movie-app-favourites-list"));
-  setFavourites(existingFavouritesList);
-}, [])
+  if (existingFavouritesList) {
+    setFavourites(existingFavouritesList);
+  } else {
+    setFavourites([]);
+  }
+}, []) 
 
 function savetoLocalStorage(items) {
   localStorage.setItem("react-movie-app-favourites-list", JSON.stringify(items));
@@ -51,7 +55,6 @@ const getMoviesApiRequest = async (movieSearch) => {
 function addFavouriteMovie(movie) {
   const newFavouriteMoviesList = [...favourites, movie];
   setFavourites(prevFavsList => (newFavouriteMoviesList));
-
   savetoLocalStorage(newFavouriteMoviesList);
 }
 function removeFavouriteMovie(movie) {
@@ -64,7 +67,7 @@ function removeFavouriteMovie(movie) {
     <div className="container-fluid movie-app">
       <div className="row align-items-center mt-2 mb-0">
         <div className="col title-bar">
-          <TitleBar heading="MovSearcherPro" />
+          <TitleBar heading="MoovySearcherPro" />
         </div>
         <div className="col-auto">
           <SearchBar movieSearch={movieSearch} setMovieSearch={setMovieSearch} />
