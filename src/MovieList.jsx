@@ -4,9 +4,8 @@ function MovieList(props) {
     return(
         <>
         {props.movies.map((movie,index) => (
-            <div key={index}>
+            <div className="d-fimage-container d-flex justify-content-start m-3">
                 <img src={movie.Poster} alt="moviePoster" />
-                <h3>{movie.Title}</h3>
             </div>
         ))}
         </>

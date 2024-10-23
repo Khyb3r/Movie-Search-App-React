@@ -1,4 +1,4 @@
- body{
+body{
     background: linear-gradient(45deg, hsl(0, 100%, 56%), hsl(188, 100%, 72%));
     background-size: 300%, 300%;
     animation: background-colour 12s ease-in-out infinite;
@@ -14,8 +14,9 @@
         background-position: 0 50%;
     }
 } 
-
-.movie-app > .row{
-    overflow-x: auto;
+.movie-app > .row {
+	overflow-x: auto;
     flex-wrap: nowrap;
-}
+} 
+
+  
