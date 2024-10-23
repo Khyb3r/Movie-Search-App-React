@@ -1,40 +1,63 @@
-body{
-    background: linear-gradient(45deg, hsl(0, 100%, 56%), hsl(188, 100%, 72%));
+body {
+    background: linear-gradient(45deg, hsl(0, 100%, 30%), hsl(236, 100%, 19%));
     background-size: 300%, 300%;
     animation: background-colour 12s ease-in-out infinite;
-}
-@keyframes background-colour{
-    0%{
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100%{ 
-        background-position: 0 50%;
-    }
-} 
-.movie-app > .row {
-	overflow-x: auto;
+  }
+  
+  @keyframes background-colour {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+  }
+  
+  .movie-app > .row {
+    overflow-x: auto;
     flex-wrap: nowrap;
-} 
-
-.image-container{
-    position: relative;
-    transition: transform 0.25s;
+  }
+  
+  .movie-list {
+    display: flex; /* Ensure it is a flex container */
+    flex-direction: row; /* Align items in a row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px; /* Optional padding around the list */
 }
+
+.image-container {
+    position: relative;
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 200px; /* Fixed width for posters */
+    margin-right: 10px; /* Space between posters */
+    transition: transform 0.25s; /* Animation on hover */
+}
+
 .image-container:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.05); /* Slight zoom on hover */
 }
+
+.image-container img {
+    width: 100%; /* Ensures the image fills the container */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 300px; /* Limit maximum height of the image */
+    object-fit: cover; /* Cover the entire area without distortion */
+}
+
 .overlay {
     position: absolute;
-    background: black;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     width: 100%;
-    transition: 0.5s ease;
-    opacity: 0;
+    height: 100%; /* Full height to cover the image */
+    transition: opacity 0.5s ease;
+    opacity: 0; /* Hidden by default */
     bottom: 0;
-    font-size: 2.5rem;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color for overlay */
 }
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+  

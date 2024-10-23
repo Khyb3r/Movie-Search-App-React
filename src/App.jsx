@@ -45,15 +45,15 @@ function addFavouriteMovie(movie) {
 }
 
   return(
-  <div className='container-fluid movie-app'>
-    <div className='row d-flex align-items-center mt-2 mb-2'>
-      <TitleBar heading="Movies"/>
-      <SearchBar movieSearch={movieSearch} setMovieSearch={setMovieSearch}/>
-    </div>
-    <div className='row'>
-      <MovieList movies={movies} favouriteComponent={AddFavourites} handleFavouriteMovieClick={addFavouriteMovie}/>
-    </div>
-  </div>
+    <div className='container-fluid movie-app'>
+            <div className='row d-flex align-items-center mt-2 mb-2 justify-content-center'>
+                <TitleBar heading="Movies" />
+                <SearchBar movieSearch={movieSearch} setMovieSearch={setMovieSearch} />
+            </div>
+            <div className='row'>
+                <MovieList movies={movies} favouriteComponent={AddFavourites} handleFavouriteMovieClick={addFavouriteMovie} />
+            </div>
+        </div>
   );
 }
 
