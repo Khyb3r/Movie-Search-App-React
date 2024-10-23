@@ -6,9 +6,10 @@ function SearchBar(props) {
     console.log("Search Bar props:" , props);
     
     return(
-        <div className="col">
+        <div className="col-md-4 col-sm-6">
       <input
-        className="form-control"
+        style={{width: '225px'}}
+        className="form-control "
         placeholder="Type to search movie..."
         value={props.movieSearch}
         onChange={(e) => props.setMovieSearch(e.target.value)}

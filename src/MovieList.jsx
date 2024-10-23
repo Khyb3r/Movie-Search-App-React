@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import styles from './MovieList.module.css';
 
 
 function MovieList(props) {
     const FavouriteComponent = props.favouriteComponent;
     const addToFavouriteList = props.handleFavouriteMovieClick;
+
     return(
-        <div className="movie-list d-flex flex-row overflow-auto"> {/* Added overflow-auto */}
+        <div className="movie-list d-flex flex-row overflow-auto"> 
         {props.movies.map((movie, index) => (
             <div className="image-container m-2" key={index}>
                 <img src={movie.Poster} alt="moviePoster" className="img-fluid" />

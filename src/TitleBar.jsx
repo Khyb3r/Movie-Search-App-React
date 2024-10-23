@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import PropTypes from 'prop-types';
-import styles from './TitleBar.module.css';
 
 
 function TitleBar(props) {
     return(
         <div>
-            <h1>{props.heading}</h1>
+            <h1 style={{color: 'white', fontSize: '1.5rem', fontWeight: 'bold', fontFamily: 'monospace'}}>
+                {props.heading}
+            </h1>
         </div>
     );
 }

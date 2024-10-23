@@ -1,7 +1,9 @@
 body {
-    background: linear-gradient(45deg, hsl(0, 100%, 30%), hsl(236, 100%, 19%));
+    background: linear-gradient(45deg, hsl(0, 0%, 0%), #636363);
     background-size: 300%, 300%;
     animation: background-colour 12s ease-in-out infinite;
+    margin: 0;
+    padding: 0;
   }
   
   @keyframes background-colour {
@@ -9,6 +11,15 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0 50%; }
   }
+  .movie-app {
+    width: 100%;
+    padding: 0;
+  }
+
+  .row {
+    padding: 0;
+  }
+
   
   .movie-app > .row {
     overflow-x: auto;
@@ -59,5 +70,23 @@ body {
 .image-container:hover .overlay {
     opacity: 1; /* Show overlay on hover */
 }
+
+.title-bar{
+    width: 100%; /* Full width */
+    background: linear-gradient(90deg, #636363, rgb(0, 0, 0));
+    background-size: 300%, 300%;
+    animation: gradient 12s ease infinite; /* Apply animation */
+    border-radius: 5px;
+    padding: 20px 0; /* Vertical padding */
+    color: #fff; /* Text color */
+    text-align: center; /* Center align text */
+    margin: 0; /* Ensure no margin */
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
   
