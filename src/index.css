@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(45deg, hsl(0, 0%, 0%), #636363);
+    background: linear-gradient(135deg,#00F260,#0575E6, #9D50BB);
     background-size: 300%, 300%;
     animation: background-colour 12s ease-in-out infinite;
     margin: 0;
@@ -73,12 +73,13 @@ body {
 
 .title-bar{
     width: 100%; /* Full width */
-    background: linear-gradient(90deg, #636363, rgb(0, 0, 0));
+    background: linear-gradient(90deg, #11998E, #38A3A5, #4776E6);
     background-size: 300%, 300%;
     animation: gradient 12s ease infinite; /* Apply animation */
     border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
     padding: 20px 0; /* Vertical padding */
-    color: #fff; /* Text color */
     text-align: center; /* Center align text */
     margin: 0; /* Ensure no margin */
 }

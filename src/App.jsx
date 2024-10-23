@@ -58,16 +58,17 @@ function addFavouriteMovie(movie) {
   savetoLocalStorage(newFavouriteMoviesList);
 }
 function removeFavouriteMovie(movie) {
-  setFavourites((prevFavsList) =>
-     favourites.filter((favourite) => 
-      (favourite.imdbID !== movie.imdbID)));
+  const updatedFavouritesList = favourites.filter((favourite) => 
+    (favourite.imdbID !== movie.imdbID));
+  setFavourites(prevFavsList => (updatedFavouritesList));
+  savetoLocalStorage(updatedFavouritesList);
 }
 
   return(
     <div className="container-fluid movie-app">
       <div className="row align-items-center mt-2 mb-0">
         <div className="col title-bar">
-          <TitleBar heading="MoovySearcherPro" />
+          <TitleBar heading="MovieSearcherPro" />
         </div>
         <div className="col-auto">
           <SearchBar movieSearch={movieSearch} setMovieSearch={setMovieSearch} />
