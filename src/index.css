@@ -19,4 +19,22 @@ body{
     flex-wrap: nowrap;
 } 
 
-  
+.image-container{
+    position: relative;
+    transition: transform 0.25s;
+}
+.image-container:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.overlay {
+    position: absolute;
+    background: black;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    bottom: 0;
+    font-size: 2.5rem;
+    padding: 20px;
+    text-align: center;
+}

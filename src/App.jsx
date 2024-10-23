@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 import TitleBar from "./TitleBar";
 import SearchBar from "./SearchBar";
+import AddFavourites from "./AddFavourites";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css"
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [movieSearch, setMovieSearch] = useState("");
+  const [favourites, setFavourites] = useState([]);
 
 useEffect(() => {
   getMoviesApiRequest(movieSearch);
@@ -26,7 +28,7 @@ const getMoviesApiRequest = async (movieSearch) => {
     const movieData = await response.json();
 
     if (movieData.Search) {
-      setMovies(movieData.Search); 
+      setMovies(prevMovieSearch => (movieData.Search)); 
     }
     
   }
@@ -36,6 +38,12 @@ const getMoviesApiRequest = async (movieSearch) => {
   }
 }
 
+function addFavouriteMovie(movie) {
+  const newFavouriteMoviesList = [...favourites, movie];
+
+  setFavourites(prevFavsList => (newFavouriteMoviesList));
+}
+
   return(
   <div className='container-fluid movie-app'>
     <div className='row d-flex align-items-center mt-2 mb-2'>
@@ -43,7 +51,7 @@ const getMoviesApiRequest = async (movieSearch) => {
       <SearchBar movieSearch={movieSearch} setMovieSearch={setMovieSearch}/>
     </div>
     <div className='row'>
-      <MovieList movies={movies}/>
+      <MovieList movies={movies} favouriteComponent={AddFavourites} handleFavouriteMovieClick={addFavouriteMovie}/>
     </div>
   </div>
   );
